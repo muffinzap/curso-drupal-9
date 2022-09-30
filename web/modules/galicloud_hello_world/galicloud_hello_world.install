@@ -10,6 +10,8 @@
  */
 function galicloud_hello_world_install() {
   \Drupal::state()->set('galicloud_hello_world.message', 'hello world!');
+  \Drupal::messenger()->addMessage(t('Created galicloud_hello_world.message variable'));
+  \Drupal::logger('galicloud_hello_world')->log(\Drupal\Core\Logger\RfcLogLevel::DEBUG,'Created galicloud_hello_world.message variable');
 }
 
 /**
