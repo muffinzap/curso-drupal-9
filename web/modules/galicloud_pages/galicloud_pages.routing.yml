@@ -6,3 +6,12 @@ galicloud_pages.simple:
   requirements:
     _permission: 'access content'
 
+galicloud-pages.calculator:
+  path: 'galicloud-pages/calculator/{num1}/{num2}'
+  defaults:
+    _title: 'Calculator'
+    _controller: '\Drupal\galicloud_pages\Controller\GalicloudPagesController::calculator'
+    num1: 4
+    num2: 5
+  requirements:
+    _permission: 'access content'
