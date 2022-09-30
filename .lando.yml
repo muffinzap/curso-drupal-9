@@ -1,0 +1,4 @@
+name: curso-drupal-9
+recipe: drupal9
+config:
+  webroot: web
