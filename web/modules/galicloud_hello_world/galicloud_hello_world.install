@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Galicloud hello world module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function galicloud_hello_world_install() {
+  \Drupal::state()->set('galicloud_hello_world.message', 'hello world!');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function galicloud_hello_world_uninstall() {
+  \Drupal::state()->delete('galicloud_hello_world.message');
+}
