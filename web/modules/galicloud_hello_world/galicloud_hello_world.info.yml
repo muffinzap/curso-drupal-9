@@ -1,0 +1,5 @@
+name: Galicloud hello world
+type: module
+description: Primer módulo
+package: Custom
+core_version_requirement: ^9 || ^10

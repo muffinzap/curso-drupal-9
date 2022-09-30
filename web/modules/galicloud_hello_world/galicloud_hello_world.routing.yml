@@ -1,0 +1,8 @@
+galicloud_hello_world.example:
+  path: '/hello'
+  defaults:
+    _title: 'Hello'
+    _controller: '\Drupal\galicloud_hello_world\Controller\GalicloudHelloWorldController::build'
+  requirements:
+    _permission: 'access content'
+
