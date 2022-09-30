@@ -1,0 +1,5 @@
+name: Galicloud pages
+type: module
+description: Galicloud pages module
+package: Custom
+core_version_requirement: ^9 || ^10

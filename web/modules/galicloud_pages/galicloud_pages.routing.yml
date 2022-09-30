@@ -1,0 +1,8 @@
+galicloud_pages.simple:
+  path: '/galicloud-pages/simple'
+  defaults:
+    _title: 'Simple Page'
+    _controller: '\Drupal\galicloud_pages\Controller\GalicloudPagesController::simple'
+  requirements:
+    _permission: 'access content'
+
