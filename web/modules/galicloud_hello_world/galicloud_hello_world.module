@@ -4,3 +4,16 @@
  * @file
  * Primary module hooks for galicloud hello world module.
  */
+
+/**
+ * Implements hook_help().
+ */
+function galicloud_hello_world_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.galicloud_hello_world':
+      return '<p>' . t('Main help for Galicloud Hello World module. ').'</p>';
+
+    case 'galicloud_hello_world.hello':
+      return '<p>' . t('Help for <em>Galicloud Hello World</em> module.') . '</p>';
+  }
+}

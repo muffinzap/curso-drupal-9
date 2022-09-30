@@ -1,4 +1,4 @@
-galicloud_hello_world.example:
+galicloud_hello_world.hello:
   path: '/hello'
   defaults:
     _title: 'Hello'
