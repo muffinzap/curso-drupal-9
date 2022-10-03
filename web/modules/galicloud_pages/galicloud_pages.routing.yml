@@ -22,3 +22,10 @@ galicloud-pages.user:
     _controller: '\Drupal\galicloud_pages\Controller\GalicloudPagesController::user'
   requirements:
     _permission: 'access content'
+galicloud-pages.links:
+  path: 'galicloud-pages/links'
+  defaults:
+    _title: 'Links'
+    _controller: '\Drupal\galicloud_pages\Controller\GalicloudPagesController::links'
+  requirements:
+    _permission: 'access content'
