@@ -15,3 +15,10 @@ galicloud-pages.calculator:
     num2: 5
   requirements:
     _permission: 'access content'
+galicloud-pages.user:
+  path: 'galicloud-pages/user/{user}'
+  defaults:
+    _title: 'User'
+    _controller: '\Drupal\galicloud_pages\Controller\GalicloudPagesController::user'
+  requirements:
+    _permission: 'access content'

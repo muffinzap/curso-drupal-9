@@ -3,6 +3,7 @@
 namespace Drupal\galicloud_pages\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\user\UserInterface;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
@@ -78,5 +79,22 @@ class GalicloudPagesController extends ControllerBase
     return $output;
   }
 
+  /**
+   * Builds the response.
+   */
+  public function user(UserInterface $user)
+  {
+
+    $list[] = $this->t("Username: @username", ['@username' => $user->getAccountName()]);
+    $list[] = $this->t("Email: @email", ['@email' => $user->getEmail()]);
+    $list[] = $this->t("Roles: @roles", ['@roles' => implode(', ', $user->getRoles())]);
+    $list[] = $this->t("Last accessed time: @lastaccess", array('@lastaccess' => \Drupal::service('date.formatter')->format($user->getLastAccessedTime(), 'short')));
+    $output['galicloud_pages_user'] = [
+      '#theme' => 'item_list',
+      '#items' => $list,
+      '#title' => $this->t('User data:'),
+    ];
+    return $output;
+  }
 
 }
