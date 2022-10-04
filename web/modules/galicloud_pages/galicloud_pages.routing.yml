@@ -29,3 +29,17 @@ galicloud-pages.links:
     _controller: '\Drupal\galicloud_pages\Controller\GalicloudPagesController::links'
   requirements:
     _permission: 'access content'
+galicloud_pages.admin_galicloud:
+  path: '/admin/galicloud'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Galicloud'
+  requirements:
+    _access: 'TRUE'
+galicloud_pages.admin_galicloud_pages:
+  path: '/admin/galicloud/galicloud_pages'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Galicloud Pages'
+  requirements:
+    _access: 'TRUE'

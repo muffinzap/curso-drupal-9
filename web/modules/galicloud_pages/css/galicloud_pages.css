@@ -1,0 +1,5 @@
+.toolbar-icon-galicloud-pages-admin-galicloud:before,
+.toolbar-icon-galicloud-pages-admin-galicloud:active:before,
+.toolbar-icon-galicloud-pages-admin-galicloud.is-active:before {
+  background-image: url(images/galicloud-icon.png);
+}

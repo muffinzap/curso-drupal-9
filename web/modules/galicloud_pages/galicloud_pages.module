@@ -24,3 +24,10 @@ function galicloud_pages_help($route_name, \Drupal\Core\Routing\RouteMatchInterf
 
   }
 }
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function galicloud_pages_toolbar_alter(&$items) {
+  $items['administration']['#attached']['library'][] = 'galicloud_pages/galicloud_pages';
+}
