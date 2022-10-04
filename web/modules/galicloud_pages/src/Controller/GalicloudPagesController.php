@@ -153,4 +153,39 @@ class GalicloudPagesController extends ControllerBase
     return $output;
   }
 
+  public function tab1()
+  {
+    return [
+      '#markup' => '<p>' . $this->t('This is the content of Tab 1') . '</p>',
+    ];
+  }
+
+  public function tab2()
+  {
+    return [
+      '#markup' => '<p>' . $this->t('This is the content of Tab 2') . '</p>',
+    ];
+  }
+
+  public function tab3()
+  {
+    return [
+      '#markup' => '<p>' . $this->t('This is the content of Tab 3') . '</p>',
+    ];
+  }
+
+  public function tab3a()
+  {
+    return [
+      '#markup' => '<p>' . $this->t('This is the content of Tab 3 a') . '</p>',
+    ];
+  }
+
+  public function tab3b()
+  {
+    return [
+      '#markup' => '<p>' . $this->t('This is the content of Tab 3 b') . '</p>',
+    ];
+  }
+
 }
