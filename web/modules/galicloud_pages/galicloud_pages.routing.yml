@@ -74,3 +74,9 @@ galicloud_pages.tab3b:
     _controller: '\Drupal\galicloud_pages\Controller\GalicloudPagesController::tab3b'
   requirements:
     _permission: 'access content'
+galicloud_pages.action1:
+  path: '/galicloud/pages/action1'
+  defaults:
+    _controller: '\Drupal\galicloud_pages\Controller\GalicloudPagesController::action1'
+  requirements:
+    _permission: 'access content'

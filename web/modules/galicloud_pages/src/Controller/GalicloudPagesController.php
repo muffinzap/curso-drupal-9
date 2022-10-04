@@ -188,4 +188,11 @@ class GalicloudPagesController extends ControllerBase
     ];
   }
 
+  public function action1()
+  {
+    return [
+      '#markup' => '<p>' . $this->t('Action 1') . '</p>',
+    ];
+  }
+
 }

@@ -38,6 +38,12 @@ galicloud_pages.user:
     user: 1
   parent: galicloud_pages.admin_galicloud_pages
   weight: 4
+galicloud_pages.tabs:
+  title: 'Tabs'
+  description: 'Tabs'
+  route_name: galicloud_pages.tab1
+  parent: galicloud_pages.admin_galicloud_pages
+  weight: 5
 #Simple link.
 #galicloud_pages.node_add:
 #  title: Add content
