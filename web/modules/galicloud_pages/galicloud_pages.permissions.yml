@@ -1,0 +1,10 @@
+#administer galicloud_pages configuration:
+#  title: 'Administer galicloud_pages configuration'
+#  description: 'Optional description.'
+#  restrict access: true
+'access calculator':
+  title: 'Access calculator page'
+  description: 'Allow users to access Calculator page.'
+'access tab2 page':
+  title: 'Access tab 2 page'
+  description: 'Allow users to access Tab 2 page.'

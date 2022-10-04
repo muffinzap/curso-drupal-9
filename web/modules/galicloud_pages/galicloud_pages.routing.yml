@@ -14,7 +14,8 @@ galicloud-pages.calculator:
     num1: 4
     num2: 5
   requirements:
-    _permission: 'access content'
+#    _permission: 'access content'
+    _permission: 'access calculator'
 galicloud-pages.user:
   path: 'galicloud-pages/user/{user}'
   defaults:
@@ -55,7 +56,9 @@ galicloud_pages.tab2:
   defaults:
     _controller: '\Drupal\galicloud_pages\Controller\GalicloudPagesController::tab2'
   requirements:
-    _permission: 'access content'
+#    _permission: 'access content'
+#    _role: 'gestor'
+    _permission: 'access tab2 page'
 galicloud_pages.tab3:
   path: '/galicloud/pages/tabs/tab3'
   defaults:
