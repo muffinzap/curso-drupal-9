@@ -10,6 +10,8 @@ use Drupal\user\UserInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
+use Drupal\Core\Routing\RouteMatchInterface;
+
 /**
  * Returns responses for Galicloud pages routes.
  */
@@ -17,15 +19,17 @@ class GalicloudPagesController extends ControllerBase
 {
 
   protected $currentUser;
+  private $routeMatch;
 
-  public function __construct(AccountInterface $current_user)
+  public function __construct(AccountInterface $current_user, RouteMatchInterface $routeMatch)
   {
     $this->currentUser = $current_user;
+    $this->routeMatch = $routeMatch;
   }
 
   public static function create(ContainerInterface $container)
   {
-    return new static($container->get('current_user'));
+    return new static($container->get('current_user'), $container->get('current_route_match'));
   }
 
   /**
@@ -210,6 +214,12 @@ class GalicloudPagesController extends ControllerBase
   {
     return [
       '#markup' => '<p>' . $this->t('Action 1') . '</p>',
+    ];
+  }
+
+  public function contentTypeHelpPage() {
+    return [
+      '#markup' => '<p>' . $this->t('Content for route %route.', ['%route' => $this->routeMatch->getRouteName()]) . '</p>',
     ];
   }
 

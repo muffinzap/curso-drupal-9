@@ -1,3 +1,5 @@
+route_callbacks:
+  - '\Drupal\galicloud_pages\Routing\GalicloudPagesRoutes::routes'
 galicloud_pages.simple:
   path: '/galicloud-pages/simple'
   defaults:
