@@ -9,7 +9,35 @@ galicloud_pages.admin_galicloud_pages:
   parent: galicloud_pages.admin_galicloud
   route_name: galicloud_pages.admin_galicloud_pages
   description: 'Activities from Galicloud Pages module'
-
+galicloud_pages.simple:
+  title: 'Simple page'
+  description: 'Simple page'
+  route_name: galicloud_pages.simple
+  parent: galicloud_pages.admin_galicloud_pages
+  weight: 1
+galicloud_pages.links:
+  title: 'Links'
+  description: 'Links'
+  route_name: galicloud-pages.links
+  parent: galicloud_pages.admin_galicloud_pages
+  weight: 2
+galicloud_pages.calculator:
+  title: 'Calculator'
+  description: 'Calculator'
+  route_name: galicloud-pages.calculator
+  route_parameters:
+    num1: 14
+    num2: 7
+  parent: galicloud_pages.admin_galicloud_pages
+  weight: 3
+galicloud_pages.user:
+  title: 'User page'
+  description: 'User page'
+  route_name: galicloud-pages.user
+  route_parameters:
+    user: 1
+  parent: galicloud_pages.admin_galicloud_pages
+  weight: 4
 #Simple link.
 #galicloud_pages.node_add:
 #  title: Add content
