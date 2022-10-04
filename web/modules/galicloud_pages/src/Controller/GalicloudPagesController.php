@@ -4,8 +4,10 @@ namespace Drupal\galicloud_pages\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Link;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
 use Drupal\user\UserInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
@@ -13,6 +15,18 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
  */
 class GalicloudPagesController extends ControllerBase
 {
+
+  protected $currentUser;
+
+  public function __construct(AccountInterface $current_user)
+  {
+    $this->currentUser = $current_user;
+  }
+
+  public static function create(ContainerInterface $container)
+  {
+    return new static($container->get('current_user'));
+  }
 
   /**
    * Builds the response.
@@ -155,8 +169,12 @@ class GalicloudPagesController extends ControllerBase
 
   public function tab1()
   {
+    $output = '<p>' . $this->t('This is the content of Tab 1') . '</p>';
+    if ($this->currentUser->hasPermission('administer nodes')) {
+      $output .= '</p>' . $this->t('This extra text is only displayed if the current user can administer nodes.') . '</p>';
+    }
     return [
-      '#markup' => '<p>' . $this->t('This is the content of Tab 1') . '</p>',
+      '#markup' => $output,
     ];
   }
 
