@@ -1,0 +1,24 @@
+#galicloud_forms.reports:
+#  path: '/admin/reports/galicloud_forms'
+#  defaults:
+#    _controller: '\Drupal\galicloud_forms\Controller\GalicloudFormsController::build'
+#    _title: 'Galicloud forms report'
+#  requirements:
+#    _permission: 'access site reports'
+#galicloud_forms.settings:
+#  path: '/admin/config/galicloud_forms/settings'
+#  defaults:
+#    _form: 'Drupal\galicloud_forms\Form\SettingsForm'
+#    _title: 'Galicloud forms settings'
+#  requirements:
+#    _permission: 'administer galicloud_forms configuration'
+
+
+
+galicloud_forms.simple:
+  path: '/galicloud-forms/simple'
+  defaults:
+    _title: 'Simple'
+    _form: 'Drupal\galicloud_forms\Form\SimpleForm'
+  requirements:
+    _permission: 'access content'
