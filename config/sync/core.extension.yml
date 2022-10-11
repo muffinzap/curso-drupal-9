@@ -22,6 +22,7 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  galicloud_blocks: 0
   galicloud_config: 0
   galicloud_forms: 0
   galicloud_hello_world: 0

@@ -1,0 +1,20 @@
+uuid: 2722a649-c798-4a80-b95a-a5ddfa6d0df4
+langcode: en
+status: true
+dependencies:
+  module:
+    - galicloud_blocks
+  theme:
+    - olivero
+id: customblockexample
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: galicloud_blocks_example
+settings:
+  id: galicloud_blocks_example
+  label: 'Custom Block Example'
+  label_display: visible
+  provider: galicloud_blocks
+visibility: {  }

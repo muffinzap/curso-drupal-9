@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Galicloud blocks module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function galicloud_blocks_schema()
+{
+  $schema['galicloud_node_votes'] = [
+    'description' => 'Stores node votes.',
+    'fields' => [
+      'nid' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => 'Node ID',
+      ],
+      'uid' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => 'User ID',
+      ],
+      'vote' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'size' => 'tiny',
+        'description' => '1 to 5',
+      ],
+    ],
+    'primary key' => ['nid', 'uid'],
+  ];
+
+  return $schema;
+}

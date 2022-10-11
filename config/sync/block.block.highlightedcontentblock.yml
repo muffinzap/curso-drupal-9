@@ -1,0 +1,22 @@
+uuid: f4b7d0e4-4bbd-4120-b53d-279b0e21756b
+langcode: en
+status: true
+dependencies:
+  module:
+    - galicloud_blocks
+  theme:
+    - olivero
+id: highlightedcontentblock
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: galicloud_blocks_highlightedcontentblock
+settings:
+  id: galicloud_blocks_highlightedcontentblock
+  label: HighlightedContentBlock
+  label_display: visible
+  provider: galicloud_blocks
+  block_message: 'Bloques destacados'
+  node_number: '5'
+visibility: {  }
