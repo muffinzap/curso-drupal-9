@@ -31,3 +31,11 @@ galicloud_forms.settings:
     _form: 'Drupal\galicloud_forms\Form\SettingsForm'
   requirements:
     _permission: 'administer site configuration'
+
+galicloud_forms.example_confirm:
+  path: '/galicloud-forms/confirm/{node}'
+  defaults:
+    _title: 'Confirm form'
+    _form: 'Drupal\galicloud_forms\Form\GalicloudConfirmForm'
+  requirements:
+    _permission: 'administer site configuration'
