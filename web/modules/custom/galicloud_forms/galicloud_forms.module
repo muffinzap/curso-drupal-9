@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Galicloud Forms module.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function galicloud_forms_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+//  dpm($form_id);
+  switch ($form_id) {
+//    case 'system_site_information_settings':
+//      $form['site_information']['site_slogan']['#required'] = TRUE;
+//      break;
+    case 'node_page_form':
+    case 'node_page_edit_form':
+      $nid = $form_state->getFormObject()->getEntity()->id();
+    $connection = \Drupal::database();
+    $highlighted = $connection->select('galicloud_node_highlighted', 'f')
+      ->fields('f', ['highlighted'])
+      ->condition('f.nid', $nid)
+      ->execute()
+      ->fetchField();
+      $form['options']['highlighted'] = [
+        '#type' => 'checkbox',
+        '#title' => t('Highlighted'),
+        '#weight' => 100,
+        '#default_value' => $highlighted,
+      ];
+      $form['actions']['submit']['#submit'][] = 'galicloud_forms_form_node_form_submit';
+      break;
+  }
+//  if (isset($form['type']) && $form['type']['#value'] . '_node_settings' == $form_id) {
+//    $upload_enabled_types = \Drupal::config('mymodule.settings')->get('upload_enabled_types');
+//    $form['workflow']['upload_' . $form['type']['#value']] = [
+//      '#type' => 'radios',
+//      '#title' => t('Attachments'),
+//      '#default_value' => in_array($form['type']['#value'], $upload_enabled_types) ? 1 : 0,
+//      '#options' => [t('Disabled'), t('Enabled')],
+//    ];
+//    // Add a custom submit handler to save the array of types back to the config file.
+//    $form['actions']['submit']['#submit'][] = 'mymodule_upload_enabled_types_submit';
+//  }
+}
+
+/**
+ * Implements hook_form_system_site_information_settings_alter().
+ */
+function galicloud_forms_form_FORM_ID_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  $form['site_information']['site_slogan']['#required'] = TRUE;
+}
+
+function galicloud_forms_form_node_form_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+{
+  $nid = $form_state->get('nid');
+  $highlighted = $form_state->getValue('highlighted');
+
+  $connection = \Drupal::database();
+  $upsert = $connection->upsert('galicloud_node_highlighted')
+    ->key('nid')
+    ->fields(['nid', 'highlighted'])
+    ->values([
+      'nid' => $nid,
+      'highlighted' => $highlighted,
+    ])->execute();
+
+}

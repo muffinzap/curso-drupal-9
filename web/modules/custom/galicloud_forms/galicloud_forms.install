@@ -56,5 +56,24 @@ function galicloud_forms_schema()
     'primary key' => ['id'],
   ];
 
+  $schema['galicloud_node_highlighted'] = [
+    'description' => 'Stores module data as key/value pairs per user.',
+    'fields' => [
+      'nid' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => "Node id",
+      ],
+      'highlighted' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Highlighted node',
+      ],
+    ],
+    'primary key' => ['nid']
+  ];
+
+
   return $schema;
 }
