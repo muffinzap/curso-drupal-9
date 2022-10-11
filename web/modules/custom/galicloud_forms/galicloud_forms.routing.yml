@@ -22,6 +22,7 @@ galicloud_forms.simple:
     _form: 'Drupal\galicloud_forms\Form\SimpleForm'
   requirements:
     _permission: 'access content'
+#    _custom_access:  '\Drupal\galicloud_forms\Form\Simple::access'
 
 galicloud_forms.settings:
   path: '/admin/config/system/settings'

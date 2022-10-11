@@ -3,6 +3,7 @@
 namespace Drupal\galicloud_forms\Form;
 
 use Drupal\Component\Utility\EmailValidator;
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -138,5 +139,10 @@ class SimpleForm extends FormBase
 //    $form_state->setRedirect('<front>');
     $form_state->setRedirect('galicloud_pages.simple');
   }
+
+//  public function access(AccountInterface $account) {
+//    return AccessResult::allowedIf($account->hasPermission('galicloud form access') &&
+//      $account->hasPermission('administer site configuration'));
+//  }
 
 }
