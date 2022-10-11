@@ -10,6 +10,7 @@ dependencies:
     - comment
     - contextual
     - file
+    - galicloud_pages
     - node
     - path
     - system
@@ -24,11 +25,14 @@ weight: 2
 is_admin: false
 permissions:
   - 'access administration pages'
+  - 'access calculator'
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access tab2 page'
   - 'access toolbar'
   - 'access tour'
+  - 'administer galicloud_pages configuration'
   - 'administer url aliases'
   - 'create article content'
   - 'create page content'

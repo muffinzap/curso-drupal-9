@@ -22,3 +22,11 @@ galicloud_forms.simple:
     _form: 'Drupal\galicloud_forms\Form\SimpleForm'
   requirements:
     _permission: 'access content'
+
+galicloud_forms.settings:
+  path: '/admin/config/system/settings'
+  defaults:
+    _title: 'Settings'
+    _form: 'Drupal\galicloud_forms\Form\SettingsForm'
+  requirements:
+    _permission: 'administer site configuration'

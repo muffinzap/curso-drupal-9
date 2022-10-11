@@ -1,0 +1,5 @@
+galicloud_forms.settings:
+  title: Settings
+  parent: system.admin_config_system
+  route_name: galicloud_forms.settings
+  weight: 10
