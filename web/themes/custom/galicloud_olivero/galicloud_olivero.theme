@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Galicloud Olivero theme.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function galicloud_olivero_preprocess_html(&$variables)
+{
+  $variables['attributes']['class'][] = 'galicloud-html';
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page.html.twig.
+ */
+function galicloud_olivero_preprocess_page(&$variables)
+{
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function galicloud_olivero_preprocess_node(&$variables)
+{
+
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function galicloud_olivero_preprocess(&$variables, $hook)
+{
+  $variables['twig_debug'] = \Drupal::service('twig')->isDebug();
+
+  $variables['show_twig_message'] = theme_get_setting('show_twig_message');
+
+}
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function galicloud_olivero_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state)
+{
+
+  $form['galicloud_olivero'] = [
+    '#type'
+    => 'fieldset',
+    '#title'
+    => t('Olivero Galiloud settings'),
+  ];
+  $form['galicloud_olivero']['show_twig_message'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Display "Twig Debug" message'),
+    '#default_value' => theme_get_setting('show_twig_message'),
+    '#description' => t('Check this option if you want to display a message when Twig Debug is enabled.'),
+  ];
+}
+
+/*
+
+*
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function galicloud_olivero_theme_suggestions_node_alter(array &$suggestions, array $variables)
+{
+  if (\Drupal::currentUser()->isAuthenticated()) {
+    $suggestions[] = 'node__' . 'logged_in';
+    $node = $variables['elements']['#node'];
+    if ($node->getType()) {
+      $suggestions[] = 'node__' . $node->getType() . '__logged_in';
+    }
+  }
+
+}
