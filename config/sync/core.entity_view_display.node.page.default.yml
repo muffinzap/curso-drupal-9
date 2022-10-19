@@ -6,8 +6,59 @@ dependencies:
     - field.field.node.page.body
     - node.type.page
   module:
+    - galicloud_theming
+    - layout_builder
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: galicloud_layout_two_column
+        layout_settings:
+          label: 'Galicloud Cols'
+          context_mapping: {  }
+        components:
+          c6823bf1-b819-4bde-9a06-f54b50baa9c4:
+            uuid: c6823bf1-b819-4bde-9a06-f54b50baa9c4
+            region: first
+            configuration:
+              id: 'field_block:node:page:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          80ec6b87-2036-49f5-8d46-6f37a0e7411e:
+            uuid: 80ec6b87-2036-49f5-8d46-6f37a0e7411e
+            region: second
+            configuration:
+              id: 'field_block:node:page:uid'
+              label: 'Authored by'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
 id: node.page.default
@@ -23,6 +74,8 @@ content:
     weight: 100
     region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 101
     region: content
 hidden: {  }

@@ -1,0 +1,14 @@
+galicloud_layout_two_column:
+  label: 'Galicloud Layout Two Column'
+  category: 'Galicloud Theming Layouts'
+  template: templates/galicloud-layout-two-column
+#  library: galicloud_theming/layouts
+  library: galicloud_theming.layouts
+  default_region: first
+  icon_map:
+    - [first, second]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
