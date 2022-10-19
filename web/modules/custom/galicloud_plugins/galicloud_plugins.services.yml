@@ -2,3 +2,14 @@ services:
   plugin.manager.gipsum:
     class: Drupal\galicloud_plugins\GalicloudPluginsPluginManager
     parent: default_plugin_manager
+
+  galicloud.courses:
+    class: Drupal\galicloud_plugins\GalicloudCourses
+    arguments: [ "%galicloud.courselist%" ]
+
+parameters:
+  galicloud.courselist:
+    - { title: 'Drupal Frontend', hours: 40 }
+    - { title: 'Drupal Backend', hours: 40 }
+
+
