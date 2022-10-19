@@ -11,6 +11,7 @@ dependencies:
     - contextual
     - file
     - galicloud_pages
+    - galicloud_users
     - node
     - path
     - system
@@ -32,8 +33,10 @@ permissions:
   - 'access tab2 page'
   - 'access toolbar'
   - 'access tour'
+  - 'access user block'
   - 'administer galicloud_pages configuration'
   - 'administer url aliases'
+  - 'configure extra user data'
   - 'create article content'
   - 'create page content'
   - 'create terms in tags'

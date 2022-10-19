@@ -1,4 +1,4 @@
-uuid: 2722a649-c798-4a80-b95a-a5ddfa6d0df4
+uuid: f8033762-198c-4e3b-a976-34ebcce9f7f7
 langcode: en
 status: true
 dependencies:
@@ -6,15 +6,15 @@ dependencies:
     - galicloud_blocks
   theme:
     - olivero
-id: customblockexample
+id: nodevotingblock
 theme: olivero
 region: sidebar
 weight: 0
 provider: null
-plugin: galicloud_blocks_example
+plugin: galicloud_blocks_nodevotingblock
 settings:
-  id: galicloud_blocks_example
-  label: 'Custom Block Example'
+  id: galicloud_blocks_nodevotingblock
+  label: NodeVotingBlock
   label_display: visible
   provider: galicloud_blocks
 visibility: {  }

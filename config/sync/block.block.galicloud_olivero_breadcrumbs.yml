@@ -1,0 +1,22 @@
+uuid: 76d5dd42-193f-40d1-94fe-648748988669
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - galicloud_olivero
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: galicloud_olivero_breadcrumbs
+theme: galicloud_olivero
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

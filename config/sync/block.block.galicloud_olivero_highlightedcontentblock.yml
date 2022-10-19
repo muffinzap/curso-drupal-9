@@ -1,14 +1,14 @@
-uuid: 56c025b6-3912-45ff-8184-83fbd277d41f
+uuid: 04f85abf-3cef-4d07-a7da-b31a90223c11
 langcode: en
 status: true
 dependencies:
   module:
     - galicloud_blocks
   theme:
-    - olivero
-id: highlightedcontentblock
-theme: olivero
-region: sidebar
+    - galicloud_olivero
+id: galicloud_olivero_highlightedcontentblock
+theme: galicloud_olivero
+region: sidebar_first
 weight: 0
 provider: null
 plugin: galicloud_blocks_highlightedcontentblock

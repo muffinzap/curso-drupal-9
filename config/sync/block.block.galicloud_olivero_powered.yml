@@ -1,0 +1,22 @@
+uuid: a728801d-3932-4de8-a3c3-adfcf6978888
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - galicloud_olivero
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: galicloud_olivero_powered
+theme: galicloud_olivero
+region: sidebar_first
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

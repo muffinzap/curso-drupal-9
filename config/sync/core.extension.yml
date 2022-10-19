@@ -27,9 +27,13 @@ module:
   galicloud_forms: 0
   galicloud_hello_world: 0
   galicloud_pages: 0
+  galicloud_theming: 0
+  galicloud_users: 0
   help: 0
   history: 0
   image: 0
+  layout_builder: 0
+  layout_discovery: 0
   link: 0
   menu_link_content: 0
   menu_ui: 0
@@ -56,4 +60,5 @@ module:
 theme:
   olivero: 0
   claro: 0
+  galicloud_olivero: 0
 profile: standard

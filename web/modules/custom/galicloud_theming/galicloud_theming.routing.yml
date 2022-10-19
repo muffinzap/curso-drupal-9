@@ -1,0 +1,7 @@
+galicloud_theming.render:
+  path: 'galicloud-theming/render'
+  defaults:
+    _title: 'Theming'
+    _controller: '\Drupal\galicloud_theming\Controller\GalicloudThemingController::build'
+  requirements:
+    _permission: 'access content'

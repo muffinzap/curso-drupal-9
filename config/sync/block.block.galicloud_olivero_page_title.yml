@@ -1,0 +1,20 @@
+uuid: 3eee1adc-1290-4fc3-8a81-d9f5ed2d96a3
+langcode: en
+status: true
+dependencies:
+  theme:
+    - galicloud_olivero
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: galicloud_olivero_page_title
+theme: galicloud_olivero
+region: sidebar_first
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

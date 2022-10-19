@@ -1,0 +1,20 @@
+uuid: 4493d268-b226-4bb6-b43a-988dfeb5e6c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - galicloud_blocks
+  theme:
+    - galicloud_olivero
+id: galicloud_olivero_nodevotingblock
+theme: galicloud_olivero
+region: sidebar_first
+weight: 0
+provider: null
+plugin: galicloud_blocks_nodevotingblock
+settings:
+  id: galicloud_blocks_nodevotingblock
+  label: NodeVotingBlock
+  label_display: visible
+  provider: galicloud_blocks
+visibility: {  }
