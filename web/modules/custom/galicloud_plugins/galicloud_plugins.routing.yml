@@ -1,0 +1,7 @@
+galicloud_plugins.gipsum:
+  path: '/galicloud/plugins/gipsum'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\galicloud_plugins\Controller\GalicloudPluginsController::gipsum'
+  requirements:
+    _permission: 'access content'

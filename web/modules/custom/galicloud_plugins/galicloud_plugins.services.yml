@@ -1,0 +1,4 @@
+services:
+  plugin.manager.gipsum:
+    class: Drupal\galicloud_plugins\GalicloudPluginsPluginManager
+    parent: default_plugin_manager
