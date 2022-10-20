@@ -1,0 +1,14 @@
+galicloud_entities.galicloud_entities_section.*:
+  type: config_entity
+  label: Galicloud Entities Section
+  mapping:
+    id:
+      type: string
+      label: ID
+    label:
+      type: label
+      label: Label
+    uuid:
+      type: string
+    description:
+      type: string

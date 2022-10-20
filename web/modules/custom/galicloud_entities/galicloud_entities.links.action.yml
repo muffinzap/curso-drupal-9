@@ -1,0 +1,5 @@
+entity.galicloud_entities_section.add_form:
+  route_name: 'entity.galicloud_entities_section.add_form'
+  title: 'Add galicloud entities section'
+  appears_on:
+    - entity.galicloud_entities_section.collection

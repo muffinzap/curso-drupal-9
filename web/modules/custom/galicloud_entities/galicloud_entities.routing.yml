@@ -1,0 +1,31 @@
+entity.galicloud_entities_section.collection:
+  path: '/admin/structure/galicloud-entities-section'
+  defaults:
+    _entity_list: 'galicloud_entities_section'
+    _title: 'Galicloud Entities Section configuration'
+  requirements:
+    _permission: 'administer galicloud_entities_section'
+
+entity.galicloud_entities_section.add_form:
+  path: '/admin/structure/galicloud_entities_section/add'
+  defaults:
+    _entity_form: 'galicloud_entities_section.add'
+    _title: 'Add a galicloud entities section'
+  requirements:
+    _permission: 'administer galicloud_entities_section'
+
+entity.galicloud_entities_section.edit_form:
+  path: '/admin/structure/galicloud-entities-section/{galicloud_entities_section}'
+  defaults:
+    _entity_form: 'galicloud_entities_section.edit'
+    _title: 'Edit a galicloud entities section'
+  requirements:
+    _permission: 'administer galicloud_entities_section'
+
+entity.galicloud_entities_section.delete_form:
+  path: '/admin/structure/galicloud-entities-section/{galicloud_entities_section}/delete'
+  defaults:
+    _entity_form: 'galicloud_entities_section.delete'
+    _title: 'Delete a galicloud entities section'
+  requirements:
+    _permission: 'administer galicloud_entities_section'

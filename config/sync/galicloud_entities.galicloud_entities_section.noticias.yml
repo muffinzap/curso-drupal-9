@@ -1,0 +1,8 @@
+uuid: 40d1b9f3-5705-4715-ac36-44ead5001c15
+langcode: en
+status: true
+dependencies: {  }
+id: noticias
+label: Noticias
+urlPattern: '/noticias/*'
+color: '#c92222'

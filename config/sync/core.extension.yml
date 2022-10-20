@@ -24,9 +24,11 @@ module:
   filter: 0
   galicloud_blocks: 0
   galicloud_config: 0
+  galicloud_entities: 0
   galicloud_forms: 0
   galicloud_hello_world: 0
   galicloud_pages: 0
+  galicloud_plugins: 0
   galicloud_theming: 0
   galicloud_users: 0
   help: 0

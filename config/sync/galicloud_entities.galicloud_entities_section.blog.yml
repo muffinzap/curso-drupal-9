@@ -1,0 +1,8 @@
+uuid: eee0210e-cf4f-4ecb-9aef-f8e019bf0356
+langcode: en
+status: true
+dependencies: {  }
+id: blog
+label: Blog
+urlPattern: '/blog/*'
+color: '#1a26d1'
