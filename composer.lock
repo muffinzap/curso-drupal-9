@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a578703405c18c4e001756f9cb251028",
+    "content-hash": "944242d23faad537f5b2f31ae607f5c6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -903,6 +903,16 @@
                 "source": "https://github.com/consolidation/site-process/tree/4.2.1"
             },
             "time": "2022-10-18T13:19:35+00:00"
+        },
+        {
+            "name": "d3/d3",
+            "version": "v3.5.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/d3/d3.git",
+                "reference": "tags/v3.5.17"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -3013,6 +3023,16 @@
                 }
             ],
             "time": "2022-06-20T21:43:03+00:00"
+        },
+        {
+            "name": "highlightjs/highlightjs",
+            "version": "11.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/highlightjs/highlight.js.git",
+                "reference": "tags/11.2.0"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "kint-php/kint",
