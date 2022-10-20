@@ -1,0 +1,7 @@
+galicloud_jquery.fadeout:
+  path: '/galicloud-jquery/fadeout'
+  defaults:
+    _title: 'Fadeout'
+    _controller: '\Drupal\galicloud_jquery\Controller\GalicloudJqueryController::build'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Galicloud jquery module.
+ */
+
+
+/**
+ * Implements hook_preprocess().
+ */
+function galicloud_jquery_preprocess(&$variables, $hook)
+{
+
+  $variables['#attached']['library'][] = 'galicloud_jquery/galicloud_jquery';
+
+}
+
