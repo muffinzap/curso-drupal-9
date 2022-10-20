@@ -12,3 +12,11 @@ galicloud_entities.galicloud_entities_section.*:
       type: string
     description:
       type: string
+
+field.value.galicloud_entities_galicloud_color:
+  type: mapping
+  label: Default value
+  mapping:
+    value:
+      type: label
+      label: Value
