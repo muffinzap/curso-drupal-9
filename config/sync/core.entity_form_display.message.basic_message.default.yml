@@ -1,0 +1,50 @@
+uuid: 4b130282-3592-4c03-b874-78d38118f0c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - galicloud_entities.message_type.basic_message
+  module:
+    - text
+id: message.basic_message.default
+targetEntityType: message
+bundle: basic_message
+mode: default
+content:
+  content:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_to:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

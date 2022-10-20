@@ -1,0 +1,6 @@
+uuid: c4176178-06fc-4f4b-8a88-d76193b3f57a
+langcode: en
+status: true
+dependencies: {  }
+id: basic_message
+label: 'Basic Message'

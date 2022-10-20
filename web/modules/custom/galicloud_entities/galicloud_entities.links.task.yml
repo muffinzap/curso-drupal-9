@@ -1,0 +1,26 @@
+entity.message.view:
+  title: 'View'
+  route_name: entity.message.canonical
+  base_route: entity.message.canonical
+entity.message.edit_form:
+  title: 'Edit'
+  route_name: entity.message.edit_form
+  base_route: entity.message.canonical
+entity.message.delete_form:
+  title: 'Delete'
+  route_name: entity.message.delete_form
+  base_route: entity.message.canonical
+  weight: 10
+entity.message.collection:
+  title: 'Messages'
+  route_name: entity.message.collection
+  base_route: system.admin_content
+  weight: 10
+entity.message_type.edit_form:
+  title: 'Edit'
+  route_name: entity.message_type.edit_form
+  base_route: entity.message_type.edit_form
+entity.message_type.collection:
+  title: 'List'
+  route_name: entity.message_type.collection
+  base_route: entity.message_type.collection

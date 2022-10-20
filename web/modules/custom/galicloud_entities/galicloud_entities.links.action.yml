@@ -3,3 +3,15 @@ entity.galicloud_entities_section.add_form:
   title: 'Add galicloud entities section'
   appears_on:
     - entity.galicloud_entities_section.collection
+
+message.type_add:
+  title: 'Add message type'
+  route_name: entity.message_type.add_form
+  appears_on:
+    - entity.message_type.collection
+
+message.add_page:
+  title: 'Add message'
+  route_name: entity.message.add_page
+  appears_on:
+    - entity.message.collection
