@@ -1,0 +1,15 @@
+galicloud_ajax.link:
+  path: '/galicloud-ajax/link'
+  defaults:
+    _title: 'Link'
+    _controller: '\Drupal\galicloud_ajax\Controller\GalicloudAjaxController::link'
+  requirements:
+    _permission: 'access content'
+
+galicloud_ajax.link_callback:
+  path: '/galicloud-ajax/link-callback'
+  defaults:
+    _title: 'Link Callback'
+    _controller: '\Drupal\galicloud_ajax\Controller\GalicloudAjaxController::linkCallback'
+  requirements:
+    _permission: 'access content'
