@@ -1,0 +1,19 @@
+uuid: a8defada-b4d2-4bdf-a137-dd61eef16181
+langcode: en
+status: true
+dependencies:
+  module:
+    - galicloud_entities
+    - node
+id: node.field_color
+field_name: field_color
+entity_type: node
+type: galicloud_entities_galicloud_color
+settings: {  }
+module: galicloud_entities
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
