@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Galicloud cache module.
+ */
+/**
+ * Implements hook_theme().
+ */
+function galicloud_cache_theme($existing, $type, $theme, $path) {
+  return [
+    'galicloud_cache_user_block' => [
+      'variables' => [
+        'name' => NULL,
+        'email' => NULL,
+      ],
+    ],
+  ];
+}

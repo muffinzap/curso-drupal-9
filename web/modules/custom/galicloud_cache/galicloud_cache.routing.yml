@@ -1,0 +1,8 @@
+galicloud_cache.example:
+  path: '/galicloud-cache/example'
+  defaults:
+    _title: 'Example Cache'
+    _controller: '\Drupal\galicloud_cache\Controller\GalicloudCacheController::build'
+  requirements:
+    _permission: 'access content'
+
