@@ -1,0 +1,20 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * @file
+ * Primary module hooks for Galicloud queues module.
+ */
+
+function galicloud_queues_node_insert(EntityInterface $entity){
+
+  $queue = \Drupal::service('queue')->get('galicloud_queues_nodereversetitles');
+  $data['id'] = $entity->id();
+  $data['title'] = $entity->getTitle();
+  $queue->createItem($data);
+  $count = $queue->numberOfItems();
+  \Drupal::messenger()->addMessage(t('Node @nid added to the queue. Items in the queue: @count',
+    ['@nid' => $entity->id(), '@count' => $count ]));
+
+}
