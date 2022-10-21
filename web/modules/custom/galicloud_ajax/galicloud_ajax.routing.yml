@@ -13,3 +13,27 @@ galicloud_ajax.link_callback:
     _controller: '\Drupal\galicloud_ajax\Controller\GalicloudAjaxController::linkCallback'
   requirements:
     _permission: 'access content'
+
+galicloud_ajax.form:
+  path: '/galicloud-ajax/form'
+  defaults:
+    _title: 'Ajax'
+    _form: 'Drupal\galicloud_ajax\Form\AjaxForm'
+  requirements:
+    _permission: 'access content'
+
+galicloud_ajax.autocomplete:
+  path: '/galicloud-ajax/autocomplete'
+  defaults:
+    _title: 'Autocomplete'
+    _form: 'Drupal\galicloud_ajax\Form\AutocompleteForm'
+  requirements:
+    _permission: 'access content'
+
+galicloud_ajax.autocomplete_user:
+  path: '/galicloud-ajax/autocomplete-user'
+  defaults:
+    _title: 'Autocomlete User'
+    _controller: '\Drupal\galicloud_ajax\Controller\GalicloudAjaxAutocompleteController::build'
+  requirements:
+    _permission: 'access content'
