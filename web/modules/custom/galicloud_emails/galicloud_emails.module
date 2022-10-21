@@ -1,0 +1,32 @@
+<?php
+
+
+/**
+ * @file
+ * Primary module hooks for Galicloud Emails module.
+ */
+
+use Drupal\Component\Utility\Html;
+
+
+/**
+ * Implements hook_mail().
+ */
+function galicloud_emails_mail($key, &$message, $params)
+{
+  $options = [
+    'langcode' => $message['langcode'],
+  ];
+
+  switch ($key) {
+    case 'contact_message':
+      $username = \Drupal::currentUser()->getDisplayName();
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $site_name = \Drupal::config('system.site')->get('name');
+      $message['subject'] = t('E-mail sent from @site-name', ['@site-name' => $site_name], $options);
+      $message['body'][] = t('@name sent you the following message:', ['@name' => $username], $options);
+      $message['body'][] = Html::escape($params['message']);
+      break;
+  }
+
+}

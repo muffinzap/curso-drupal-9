@@ -1,0 +1,8 @@
+galicloud_emails.message:
+  path: '/galicloud-emails/message'
+  defaults:
+    _title: 'Message'
+    _form: 'Drupal\galicloud_emails\Form\MessageForm'
+  requirements:
+#    _permission: 'access content'
+    _role: 'authenticated'
