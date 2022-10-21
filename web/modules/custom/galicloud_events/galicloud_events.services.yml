@@ -1,0 +1,13 @@
+services:
+  galicloud_events.event_subscriber:
+    class: Drupal\galicloud_events\EventSubscriber\GalicloudEventsSubscriber
+    arguments: [ '@messenger']
+    tags:
+      - { name: event_subscriber }
+
+
+  galicloud_events.user_login_subscriber:
+    class: Drupal\galicloud_events\EventSubscriber\GalicloudEventsUserSubscriber
+    arguments: ['@messenger']
+    tags:
+      - { name: event_subscriber }
