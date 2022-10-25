@@ -1,0 +1,16 @@
+galicloud_crud.crud:
+  path: '/galicloud-crud/crud'
+  defaults:
+    _title: 'Crud'
+    _controller: '\Drupal\galicloud_crud\Controller\GalicloudCrudController::build'
+  requirements:
+    _permission: 'access content'
+
+galicloud_crud.delete:
+  path: '/galicloud-crud/delete/{pid}'
+  defaults:
+    _title: 'Delete'
+    _controller: '\Drupal\galicloud_crud\Controller\GalicloudCrudController::deletePerson'
+  requirements:
+    _permission: 'access content'
+
