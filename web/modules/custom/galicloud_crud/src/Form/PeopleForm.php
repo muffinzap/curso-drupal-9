@@ -2,13 +2,32 @@
 
 namespace Drupal\galicloud_crud\Form;
 
+use Drupal\Core\Database\Connection;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a Galicloud Crud form.
  */
 class PeopleForm extends FormBase {
+
+//  protected Connection $database;
+//  protected $currentUser;
+//  public function __construct(Connection $database, AccountInterface $currentUser)
+//  {
+//    $this->database = $database;
+//    $this->currentUser = $this->currentUser;
+//  }
+//
+//  public static function create(ContainerInterface $container)
+//  {
+//    return new static(
+//      $container->get('database'),
+//      $container->get('current_user'),
+//    );
+//  }
 
   /**
    * {@inheritdoc}
@@ -62,6 +81,7 @@ class PeopleForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    //TODO inyectar database y current user
     \Drupal::database()->insert('galicloud_people')->fields(['uid','name', 'age'])->values([
       \Drupal::currentUser()->id(),
       $form_state->getValue('name'),

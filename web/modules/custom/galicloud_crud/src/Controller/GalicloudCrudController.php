@@ -80,12 +80,7 @@ class GalicloudCrudController extends ControllerBase
 
     $rows = [];
     foreach ($data as $row){
-      $a = $row;
-//      $url = Url::fromUri('/user/'.$row['uid']);
-      $url = Url::fromUri('https://www.galicloud.com');
       $url = Url::fromRoute('entity.user.canonical', ['user' => $row['uid']]);
-
-//      $row['uid'] = User::load($row['uid'])->getAccountName();
       $row['uid'] = Link::fromTextAndUrl(User::load($row['uid'])->getAccountName()??'Anonimo', $url) ;
       $deleteUrl = Url::fromRoute('galicloud_crud.delete',['pid'=>$row['id']]);
       $row['action'] = Link::fromTextAndUrl($this->t('Delete'),$deleteUrl );
