@@ -14,3 +14,11 @@ galicloud_crud.delete:
   requirements:
     _permission: 'access content'
 
+
+galicloud_crud.form:
+  path: '/galicloud-crud/form/{id}/{name}/{age}'
+  defaults:
+    _title: 'Example'
+    _form: 'Drupal\galicloud_crud\Form\PeopleForm'
+  requirements:
+    _permission: 'access content'

@@ -11,7 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Provides a Galicloud Crud form.
  */
-class PeopleForm extends FormBase {
+class PeopleForm extends FormBase
+{
 
 //  protected Connection $database;
 //  protected $currentUser;
@@ -32,26 +33,35 @@ class PeopleForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function getFormId() {
+  public function getFormId()
+  {
     return 'galicloud_crud_people';
   }
 
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state) {
+  public function buildForm(array $form, FormStateInterface $form_state, $id = null, $name = '', $age = '')
+  {
 
     $form['name'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Name'),
+      '#default_value' => $name,
       '#required' => TRUE,
     ];
 
     $form['age'] = [
       '#type' => 'number',
       '#title' => $this->t('Age'),
+      '#default_value' => $age,
       '#required' => TRUE,
     ];
+
+    $form['id'] = array(
+      '#type' => 'hidden',
+      '#value' => $id,
+    );
 
 
     $form['actions'] = [
@@ -68,7 +78,8 @@ class PeopleForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
+  public function validateForm(array &$form, FormStateInterface $form_state)
+  {
     if (empty($form_state->getValue('name'))) {
       $form_state->setErrorByName('name', $this->t('Write name'));
     }
@@ -80,17 +91,28 @@ class PeopleForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
+  public function submitForm(array &$form, FormStateInterface $form_state)
+  {
     //TODO inyectar database y current user
-    \Drupal::database()->insert('galicloud_people')->fields(['uid','name', 'age'])->values([
-      \Drupal::currentUser()->id(),
-      $form_state->getValue('name'),
-      $form_state->getValue('age')
-    ])->execute();
+//    \Drupal::database()->insert('galicloud_people')->fields(['uid','name', 'age'])->values([
+//      \Drupal::currentUser()->id(),
+//      $form_state->getValue('name'),
+//      $form_state->getValue('age')
+//    ])->execute();
+
+
+    \Drupal::database()->upsert('galicloud_people')
+      ->key('id')
+      ->fields(['id', 'uid', 'name', 'age'])->values([
+        $form_state->getValue('id'),
+        \Drupal::currentUser()->id(),
+        $form_state->getValue('name'),
+        $form_state->getValue('age')
+      ])->execute();
 
 
     $this->messenger()->addStatus($this->t('Created people.'));
-//    $form_state->setRedirect('<front>');
+    $form_state->setRedirect('galicloud_crud.crud');
   }
 
 }
