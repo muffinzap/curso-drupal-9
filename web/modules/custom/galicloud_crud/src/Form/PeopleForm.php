@@ -41,8 +41,18 @@ class PeopleForm extends FormBase
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, $id = null, $name = '', $age = '')
+  public function buildForm(array $form, FormStateInterface $form_state, $id = null)
   {
+
+    $name= '';
+    $age = '';
+
+    if($id){
+      $res = \Drupal::database()->select('galicloud_people','gp')->fields('gp',['name','age'])->condition('id',$id)->execute()->fetch();
+      $name = $res->name;
+      $age = $res->age;
+    }
+
 
     $form['name'] = [
       '#type' => 'textfield',

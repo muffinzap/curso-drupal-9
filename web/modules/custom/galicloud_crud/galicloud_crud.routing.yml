@@ -16,7 +16,7 @@ galicloud_crud.delete:
 
 
 galicloud_crud.form:
-  path: '/galicloud-crud/form/{id}/{name}/{age}'
+  path: '/galicloud-crud/form/{id}'
   defaults:
     _title: 'Example'
     _form: 'Drupal\galicloud_crud\Form\PeopleForm'

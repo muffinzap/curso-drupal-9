@@ -5,6 +5,7 @@ namespace Drupal\galicloud_crud\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Link;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
 use Drupal\user\Entity\User;
@@ -85,9 +86,24 @@ class GalicloudCrudController extends ControllerBase
       $deleteUrl = Url::fromRoute('galicloud_crud.delete',['pid'=>$row['id']]);
       $row['delete'] = Link::fromTextAndUrl($this->t('Delete'),$deleteUrl) ;
 
-      $deleteUrl = Url::fromRoute('galicloud_crud.form',['id'=>$row['id'],'name'=>$row['name'],'age'=>$row['age']]);
+      $editUrl = Url::fromRoute('galicloud_crud.form',['id'=>$row['id'],'name'=>$row['name'],'age'=>$row['age']]);
 
-      $row['edit'] = Link::fromTextAndUrl($this->t('Edit'),$deleteUrl ) ;
+      $row['edit'] = Link::fromTextAndUrl($this->t('Edit'),$editUrl ) ;
+
+//      $row['links']['data'] = [
+//        'container' => [
+//          'edit_link' => [
+//            '#type' => 'link',
+//            '#url' => $editUrl,
+//            '#title' => 'Editar'
+//          ],
+//          'delete_link' => [
+//            '#type' => 'link',
+//            '#url' => $deleteUrl,
+//            '#title' => 'Borrar'
+//          ],
+//        ]
+//      ];
 
       unset($row['id']);
       $rows[] = $row;
