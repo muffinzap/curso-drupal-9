@@ -82,3 +82,12 @@ function galicloud_custom_user_predelete(UserInterface $account) {
   $galicloud_custom_entities = $storage->loadMultiple($galicloud_custom_entity_ids);
   $storage->delete($galicloud_custom_entities);
 }
+
+/**
+ * Implements hook_galicloud_title_alter().
+ */
+function galicloud_custom_galicloud_title_alter(&$build)
+{
+  $build['#prefix'] = '<h1>Entidad</h1>';
+  $build['#suffix'] = '<hr>';
+}
