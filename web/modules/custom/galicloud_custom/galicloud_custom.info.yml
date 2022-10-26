@@ -1,0 +1,5 @@
+name: Galicloud Custom
+type: module
+description: Creates custom entity, custom hook, custom field ...
+package: Custom
+core_version_requirement: ^9 || ^10

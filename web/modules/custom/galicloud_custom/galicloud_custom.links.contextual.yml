@@ -1,0 +1,10 @@
+entity.galicloud_custom_entity.edit_form:
+  route_name: entity.galicloud_custom_entity.edit_form
+  group: galicloud_custom_entity
+  title: Edit
+
+entity.galicloud_custom_entity.delete_form:
+  route_name: entity.galicloud_custom_entity.delete_form
+  group: galicloud_custom_entity
+  title: Delete
+  weight: 10

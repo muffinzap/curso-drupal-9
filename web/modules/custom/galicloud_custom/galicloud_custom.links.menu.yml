@@ -1,0 +1,5 @@
+entity.galicloud_custom_entity_type.collection:
+  title: 'Galicloud custom entity types'
+  description: 'Manage and CRUD actions on Galicloud custom entity type.'
+  parent: system.admin_structure
+  route_name: entity.galicloud_custom_entity_type.collection

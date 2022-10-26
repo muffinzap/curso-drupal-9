@@ -1,0 +1,7 @@
+galicloud_custom.load:
+  path: '/galicloud-custom/load/{id}'
+  defaults:
+    _title: 'Load Custom Entity'
+    _controller: '\Drupal\galicloud_custom\Controller\GalicloudCustomController::build'
+  requirements:
+    _permission: 'access content'

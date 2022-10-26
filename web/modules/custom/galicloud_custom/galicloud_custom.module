@@ -1,0 +1,84 @@
+<?php
+
+/**
+ * @file
+ * Provides a galicloud custom entity entity type.
+ */
+
+use Drupal\Core\Render\Element;
+use Drupal\galicloud_custom\Entity\GalicloudCustomEntity;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function galicloud_custom_theme() {
+  return [
+    'galicloud_custom_entity' => [
+      'render element' => 'elements',
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for galicloud custom entity templates.
+ *
+ * Default template: galicloud-custom-entity.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the galicloud custom entity information and any
+ *     fields attached to the entity.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_galicloud_custom_entity(array &$variables) {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+/**
+ * Implements hook_user_cancel().
+ */
+function galicloud_custom_user_cancel($edit, UserInterface $account, $method) {
+  switch ($method) {
+    case 'user_cancel_block_unpublish':
+      // Unpublish galicloud custom entities.
+      $storage = \Drupal::entityTypeManager()->getStorage('galicloud_custom_entity');
+      $galicloud_custom_entity_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->condition('status', 1)
+        ->execute();
+      foreach ($storage->loadMultiple($galicloud_custom_entity_ids) as $galicloud_custom_entity) {
+        $galicloud_custom_entity->set('status', FALSE);
+        $galicloud_custom_entity->save();
+      }
+      break;
+
+    case 'user_cancel_reassign':
+      // Anonymize galicloud custom entities.
+      $storage = \Drupal::entityTypeManager()->getStorage('galicloud_custom_entity');
+      $galicloud_custom_entity_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->execute();
+      foreach ($storage->loadMultiple($galicloud_custom_entity_ids) as $galicloud_custom_entity) {
+        $galicloud_custom_entity->setOwnerId(0);
+        $galicloud_custom_entity->save();
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete() for user entities.
+ */
+function galicloud_custom_user_predelete(UserInterface $account) {
+  // Delete galicloud custom entities.
+  $storage = \Drupal::entityTypeManager()->getStorage('galicloud_custom_entity');
+  $galicloud_custom_entity_ids = $storage->getQuery()
+    ->condition('uid', $account->id())
+    ->execute();
+  $galicloud_custom_entities = $storage->loadMultiple($galicloud_custom_entity_ids);
+  $storage->delete($galicloud_custom_entities);
+}

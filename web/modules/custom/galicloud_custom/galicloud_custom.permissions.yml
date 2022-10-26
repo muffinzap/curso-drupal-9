@@ -1,0 +1,4 @@
+administer galicloud custom entity types:
+  title: 'Administer galicloud custom entity types'
+  description: 'Maintain the types of galicloud custom entity entity.'
+  restrict access: true

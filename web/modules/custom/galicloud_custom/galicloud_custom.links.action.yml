@@ -1,0 +1,11 @@
+galicloud_custom_entity.type_add:
+  title: 'Add galicloud custom entity type'
+  route_name: entity.galicloud_custom_entity_type.add_form
+  appears_on:
+    - entity.galicloud_custom_entity_type.collection
+
+galicloud_custom_entity.add_page:
+  title: 'Add galicloud custom entity'
+  route_name: entity.galicloud_custom_entity.add_page
+  appears_on:
+    - entity.galicloud_custom_entity.collection
