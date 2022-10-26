@@ -1,0 +1,21 @@
+services:
+  theme.negotiator.galicloud_services.example:
+    class: Drupal\galicloud_services\Theme\GalicloudServicesNegotiator
+    arguments: ['@current_user']
+    tags:
+      - { name: theme_negotiator, priority: 1000 }
+
+  galicloud_services.middleware:
+    class: Drupal\galicloud_services\GalicloudServicesMiddleware
+    tags:
+      - { name: http_middleware, priority: 1000 }
+
+  galicloud_services.breadcrumb:
+    class: Drupal\galicloud_services\GalicloudServicesBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 1000 }
+
+  galicloud_services.route_subscriber:
+    class: Drupal\galicloud_services\EventSubscriber\GalicloudServicesRouteSubscriber
+    tags:
+      - { name: event_subscriber }

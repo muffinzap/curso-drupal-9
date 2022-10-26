@@ -1,17 +1,17 @@
-uuid: 044c456a-2f8d-4518-9a76-f999838f2bf8
+uuid: dbb3134d-2142-4335-95a5-4f7d2021df85
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - galicloud_olivero
+    - bartik
 _core:
-  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
-id: galicloud_olivero_content
-theme: galicloud_olivero
+  default_config_hash: kigu8pTxXt1qGR2NJ5HHdC4G2G1wsDrIjLPKBT5wUBc
+id: bartik_content
+theme: bartik
 region: content
-weight: -7
+weight: 0
 provider: null
 plugin: system_main_block
 settings:

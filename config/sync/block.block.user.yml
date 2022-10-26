@@ -1,0 +1,25 @@
+uuid: 5704c1d5-ddd3-41ee-9453-ef2cd9501529
+langcode: en
+status: true
+dependencies:
+  module:
+    - galicloud_cache
+    - system
+  theme:
+    - galicloud_olivero
+id: user
+theme: galicloud_olivero
+region: content
+weight: -8
+provider: null
+plugin: galicloud_cache_user
+settings:
+  id: galicloud_cache_user
+  label: User
+  label_display: visible
+  provider: galicloud_cache
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
