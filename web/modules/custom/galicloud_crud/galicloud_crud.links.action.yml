@@ -1,0 +1,10 @@
+galicloud_crud.add_article:
+  route_name: galicloud_crud.form.add
+#  route_parameters:
+#    node_type: article
+#  options:
+#    attributes: {target: _blank}
+  title: Add person
+  weight: 10
+  appears_on:
+    - galicloud_crud.crud

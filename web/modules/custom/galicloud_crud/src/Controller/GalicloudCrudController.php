@@ -11,6 +11,7 @@ use Drupal\Core\Url;
 use Drupal\user\Entity\User;
 use phpDocumentor\Reflection\Types\Array_;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Returns responses for Galicloud crud routes.

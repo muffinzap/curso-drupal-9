@@ -72,6 +72,7 @@ class PeopleForm extends FormBase
       '#type' => 'hidden',
       '#value' => $id,
     );
+    $form_state->set('aid', $id);
 
 
     $form['actions'] = [
