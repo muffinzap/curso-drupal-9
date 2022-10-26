@@ -1,0 +1,44 @@
+# Field storage.
+field.storage_settings.galicloud_custom_url:
+  type: mapping
+  label: Example storage settings
+  mapping:
+    foo:
+      type: string
+      label: Foo
+
+# Field instance.
+field.field_settings.galicloud_custom_url:
+  type: mapping
+  label: Example field settings
+  mapping:
+    bar:
+      type: string
+      label: Bar
+
+# Default value.
+field.value.galicloud_custom_url:
+  type: mapping
+  label: Default value
+  mapping:
+    url:
+      type: uri
+      label: url
+
+# Field widget.
+field.widget.settings.galicloud_custom_url:
+  type: mapping
+  label: Example widget settings
+  mapping:
+    foo:
+      type: string
+      label: Foo
+
+# Field formatter.
+field.formatter.settings.galicloud_custom_url_default:
+  type: mapping
+  label: Example formatter settings
+  mapping:
+    foo:
+      type: string
+      label: Foo

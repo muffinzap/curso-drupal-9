@@ -1,0 +1,6 @@
+services:
+  path_processor.galicloud_custom:
+    class: Drupal\galicloud_custom\PathProcessor\PathProcessorGalicloudCustom
+    tags:
+      - { name: path_processor_inbound, priority: 1000 }
+      - { name: path_processor_outbound, priority: 1000 }
