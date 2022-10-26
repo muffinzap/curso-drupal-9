@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Galicloud queue content module.
+ */
+
+
+
+/**
+ * Implements hook_install().
+ */
+function galicloud_queue_content_install() {
+//  \Drupal::messenger()->addStatus(__FUNCTION__);
+  $titles = [
+    "Created Article 1",
+    "Created Article 2",
+    "Created Article 3",
+    "Created Article 4",
+  ];
+
+  foreach ($titles as $title){
+    $queue = \Drupal::service('queue')->get('galicloud_queue_content_generatecontent');
+//    $data['id'] = $entity->id();
+    $data['title'] = $title;
+    $queue->createItem($data);
+//    $count = $queue->numberOfItems();
+//    \Drupal::messenger()->addMessage(t('Node @nid added to the queue. Items in the queue: @count',
+//      ['@nid' => $entity->id(), '@count' => $count ]));
+
+  }
+
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function galicloud_queue_content_uninstall() {
+  \Drupal::messenger()->addStatus(__FUNCTION__);
+}
+
+
