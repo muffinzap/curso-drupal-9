@@ -91,7 +91,7 @@ class GalicloudPagesController extends ControllerBase
         array('@num1' => $num1, '@num2' => $num2));
     }
 
-    $output['forcontu_pages_calculator'] = [
+    $output['galicloud_pages_calculator'] = [
       '#theme' => 'item_list',
       '#items' => $list,
       '#title' => $this->t('Operations:'),

@@ -14,6 +14,6 @@ function galicloud_hello_world_help($route_name, \Drupal\Core\Routing\RouteMatch
       return '<p>' . t('Main help for Galicloud Hello World module. ').'</p>';
 
     case 'galicloud_hello_world.hello':
-      return '<p>' . t('Help for <em>Galicloud Hello World</em> module.') . '</p>';
+      return '<p>' . t('Help for <em>Galicloud Hello World</em> module.') . '</p>';//se muestra al anónimo
   }
 }
